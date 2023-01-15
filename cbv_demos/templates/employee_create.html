@@ -1,0 +1,5 @@
+<form action="{% url 'employees list view' %}" method="post" >
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Създай служител"/>
+</form>

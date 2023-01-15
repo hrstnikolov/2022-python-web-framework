@@ -1,0 +1,6 @@
+<h1>Форма за регистрация на потребители</h1>
+<form action="{% url 'sign up' %}" method="post">
+    {{ form.as_p }}
+    <button>Registrirai se</button>
+    {% csrf_token %}
+</form>

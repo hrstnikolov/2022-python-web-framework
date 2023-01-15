@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+<h1>{{ title }}</h1>
+<form action="{% url 'employees list view' %}">
+    <label>
+        <input name="pattern"/>
+    </label>
+    <button>
+        Search
+    </button>
+    {% csrf_token %}
+</form>
+<ul>
+    {% for employee in employees %}
+        <a href="{% url 'employee details view' pk=employee.pk %}">
+            <li>{{ employee.full_name }}</li>
+        </a>
+    {% endfor %}
+</ul>
+</body>
+</html>

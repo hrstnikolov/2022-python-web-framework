@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+
+{% block page_content %}
+    <div class="container">
+        <div class="py-5 text-center">
+            <div class="row g-6">
+                <div class="col-md-7 col-lg-8">
+                    <h4 class="mb-3">Add new specification</h4>
+                    <form action="{% url 'add specification' %}" method="post" class="needs-validation" novalidate>
+                        <div class="row g-3">
+                            {{ form.as_p }}
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add</button>
+                        {% csrf_token %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

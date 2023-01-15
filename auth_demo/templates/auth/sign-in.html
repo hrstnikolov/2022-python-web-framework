@@ -1,0 +1,5 @@
+<form method="post" action="{% url 'sign in' %}">
+    {{ form.as_ul }}
+    <button>Логни ме!</button>
+    {% csrf_token %}
+</form>

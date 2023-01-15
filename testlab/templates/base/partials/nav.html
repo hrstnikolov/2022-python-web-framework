@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'index' %}">
+                        Home
+                    </a>
+                </li>
+
+
+                <!-- Customers dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Customers
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'add customer' %}">Add</a></li>
+                        <li><a class="dropdown-item" href="{% url 'list customers' %}">List</a></li>
+                    </ul>
+
+
+                <!-- Specifications dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Specifications
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'add specification' %}">Add</a></li>
+                        <li><a class="dropdown-item" href="{% url 'list specifications' %}">List</a></li>
+                    </ul>
+
+
+                <!-- ValidationTests dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Validation Tests
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'add validation test' %}">Add</a></li>
+                        <li><a class="dropdown-item" href="{% url 'list validation tests' %}">List</a></li>
+                    </ul>
+            </ul>
+        </div>
+    </div>
+</nav>

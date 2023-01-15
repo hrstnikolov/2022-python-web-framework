@@ -1,0 +1,36 @@
+{% extends 'base/base.html' %}
+
+{% block page_content %}
+    <h4>All customers</h4>
+    <ul class="list-group">
+{#        {% for customer in customer_list %}#}
+{#            <li class="list-group-item d-flex justify-content-between align-items-center">#}
+{##}
+{#                {{ customer.name }}#}
+{##}
+{#                <form method="get" action="{% url 'list specifications' %}">#}
+{#                    <label>#}
+{#                        <input type="hidden" name="pattern" value="{{ customer.name }}"/>#}
+{#                    </label>#}
+{#                    <button class="btn btn-link"> {{ customer.name }}</button>#}
+{#                    {% csrf_token %}#}
+{#                </form>#}
+{##}
+{##}
+{#                <span class="badge bg-primary rounded-pill">#}
+{#                    {{ customer.specification_set.count }}#}
+{#                </span>#}
+{#            </li>#}
+{#        {% endfor %}#}
+        {% for customer in customer_list %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a href="{% url 'list by customer specifications' cust=customer.name|lower %}">
+                    {{ customer.name }}
+                </a>
+                <span class="badge bg-primary rounded-pill">
+                    {{ customer.specification_set.count }}
+                </span>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
